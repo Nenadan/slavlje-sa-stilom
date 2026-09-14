@@ -7,24 +7,56 @@ import './ProductCard.css';
 function ProductCard({ product }) {
   const { addToCart } = useCart();
   const [justAdded, setJustAdded] = useState(false);
-  const timeoutRef = useRef(null);
+  const [activePhotoIndex, setActivePhotoIndex] = useState(0);
+  const addTimeoutRef = useRef(null);
 
-  useEffect(() => () => clearTimeout(timeoutRef.current), []);
+  const photos = product.images ?? [];
 
-  const illustration = getIllustration(product.id, product.drawingType, product.colors);
+  useEffect(() => () => clearTimeout(addTimeoutRef.current), []);
+
+  const illustration = photos.length
+    ? null
+    : getIllustration(product.id, product.drawingType, product.colors);
 
   function handleAddToCart() {
     addToCart(product);
     setJustAdded(true);
-    clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => setJustAdded(false), 1100);
+    clearTimeout(addTimeoutRef.current);
+    addTimeoutRef.current = setTimeout(() => setJustAdded(false), 1100);
   }
 
   return (
     <article className="product-card">
-      <div className="product-image">
-        <div aria-hidden="true" dangerouslySetInnerHTML={{ __html: illustration }} />
+      <div className={`product-image${photos.length ? ' has-photos' : ''}`}>
+        {photos.length ? (
+          photos.map((photo, index) => (
+            <img
+              key={photo}
+              src={photo}
+              alt={index === activePhotoIndex ? product.name : ''}
+              aria-hidden={index !== activePhotoIndex}
+              className={`product-photo${index === activePhotoIndex ? ' active' : ''}`}
+            />
+          ))
+        ) : (
+          <div aria-hidden="true" dangerouslySetInnerHTML={{ __html: illustration }} />
+        )}
         {product.badge && <span className="badge">{product.badge}</span>}
+
+        {photos.length > 1 && (
+          <div className="product-photo-dots">
+            {photos.map((photo, index) => (
+              <button
+                key={photo}
+                type="button"
+                className={`product-photo-dot${index === activePhotoIndex ? ' active' : ''}`}
+                aria-label={`Prikaži fotografiju ${index + 1}`}
+                aria-current={index === activePhotoIndex}
+                onClick={() => setActivePhotoIndex(index)}
+              />
+            ))}
+          </div>
+        )}
       </div>
       <div className="product-body">
         <div className="product-category">{product.category}</div>

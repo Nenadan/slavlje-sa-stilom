@@ -1,3 +1,6 @@
+import satenskeRuze1 from '../assets/pokloni/satenske-ruze-1/satenske_ruze-1-1.webp';
+import satenskeRuze2 from '../assets/pokloni/satenske-ruze-1/satenske_ruze-1-2.webp';
+
 export const categories = ['Sve', 'Baloni', 'Dekoracije', 'Party program', 'Pokloni'];
 
 export const products = [
@@ -163,5 +166,14 @@ export const products = [
     description: 'Format A5, vaš tekst i boje, rok izrade jedan radni dan.',
     drawingType: 'card',
     colors: ['#00A9A5', '#E31C79'],
+  },
+  {
+    id: 'k5',
+    category: 'Pokloni',
+    name: 'Satenske ruže, srce',
+    price: 2500,
+    unit: 'komad',
+    description: 'Večite satenske ruže složene u kutiji u obliku srca, idealne za romantične prilike.',
+    images: [satenskeRuze2, satenskeRuze1],
   },
 ];
