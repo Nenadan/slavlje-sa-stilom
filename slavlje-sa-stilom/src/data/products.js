@@ -5,6 +5,11 @@ import satenskiVenac2 from '../assets/pokloni/satenski-venci/satenski_venac-2.we
 import satenskiVenac3 from '../assets/pokloni/satenski-venci/satenski_venac-3.webp';
 import satenskaKorpica1 from '../assets/pokloni/satenske-korpice/satenska_korpica-1-1.webp';
 import satenskaKorpica2 from '../assets/pokloni/satenske-korpice/satenska_korpica-1-2.webp';
+import autoDekoracija1 from '../assets/dekoracije/auto-dekoracija/auto-dekoracija-1-1.jpg';
+import autoDekoracija2 from '../assets/dekoracije/auto-dekoracija/auto-dekoracija-1-2.jpg';
+import dekoracijaZaSlikanje1 from '../assets/dekoracije/dekoracije-za-slikanje/dekoracija-za-slikanje-1-1.jpg';
+import dekoracijaZaSlikanje2 from '../assets/dekoracije/dekoracije-za-slikanje/dekoracija-za-slikanje-1-2.jpg';
+import dekoracijaZaSlikanje3 from '../assets/dekoracije/dekoracije-za-slikanje/dekoracija-za-slikanje-1-3.jpg';
 
 export const categories = ['Sve', 'Baloni', 'Dekoracije', 'Party program', 'Pokloni'];
 
@@ -90,6 +95,24 @@ export const products = [
     description: 'Slova visine 80 cm na baterije. Dostupno: SREĆAN ROĐENDAN, LOVE, 18.',
     drawingType: 'sign',
     colors: ['#FFC700', '#191426'],
+  },
+  {
+    id: 'd5',
+    category: 'Dekoracije',
+    name: 'Dekoracije za automobil',
+    price: 5000,
+    unit: 'postavka',
+    description: 'Ukras za venčano vozilo od bele til trake i cveća, postavlja se na haubu i retrovizore.',
+    images: [autoDekoracija1, autoDekoracija2],
+  },
+  {
+    id: 'd6',
+    category: 'Dekoracije',
+    name: 'Dekoracija za slikanje',
+    price: 18000,
+    unit: 'postavka',
+    description: 'Personalizovana dekoracija za fotografisanje — balon luk ili pozadina, rekviziti i osvetljeni brojevi, prilagođeno temi proslave.',
+    images: [dekoracijaZaSlikanje1, dekoracijaZaSlikanje2, dekoracijaZaSlikanje3],
   },
   {
     id: 'p1',
