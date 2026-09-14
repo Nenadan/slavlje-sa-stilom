@@ -1,6 +1,29 @@
 import { Link } from 'react-router-dom';
+import HeroSlider from '../HeroSlider/HeroSlider';
 import heroImage from '../../assets/Hero_Image.jpg';
+import heroImage2 from '../../assets/Hero_Image2.jpg';
+import heroImage3 from '../../assets/Hero_Image3.jpg';
+import heroImage4 from '../../assets/Hero_Image4.jpg';
 import './Hero.css';
+
+const HERO_IMAGES = [
+  {
+    src: heroImage,
+    alt: 'Balon luk u safari temi sa brojem 1, postavljen za proslavu prvog rođendana',
+  },
+  {
+    src: heroImage2,
+    alt: 'Crni balon luk, dekoracija za punoleststvo',
+  },
+  {
+    src: heroImage3,
+    alt: 'Bordo i beli balon luk sa brojevima za proslavu punoletstva',
+  },
+  {
+    src: heroImage4,
+    alt: 'Luk balona, dekoracija za punoletstvo',
+  },
+];
 
 function Hero() {
   return (
@@ -33,11 +56,7 @@ function Hero() {
           </div>
         </div>
         <div className="hero-image">
-          <img
-            className="hero-photo"
-            src={heroImage}
-            alt="Balon luk u safari temi sa brojem 1, postavljen za proslavu prvog rođendana"
-          />
+          <HeroSlider images={HERO_IMAGES} />
         </div>
       </div>
     </section>
