@@ -1,14 +1,6 @@
 import { Link } from 'react-router-dom';
-import { getIllustration } from '../../utils/illustrations';
+import heroImage from '../../assets/Hero_Image.jpg';
 import './Hero.css';
-
-const HERO_ILLUSTRATION = getIllustration(
-  'hero',
-  'arch',
-  ['#E31C79', '#FFC700', '#00A9A5', '#B8A2F0'],
-  600,
-  460,
-);
 
 function Hero() {
   return (
@@ -40,11 +32,13 @@ function Hero() {
             </div>
           </div>
         </div>
-        <div
-          className="hero-image"
-          aria-hidden="true"
-          dangerouslySetInnerHTML={{ __html: HERO_ILLUSTRATION }}
-        />
+        <div className="hero-image">
+          <img
+            className="hero-photo"
+            src={heroImage}
+            alt="Balon luk u safari temi sa brojem 1, postavljen za proslavu prvog rođendana"
+          />
+        </div>
       </div>
     </section>
   );
