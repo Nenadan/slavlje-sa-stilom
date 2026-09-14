@@ -1,41 +1,110 @@
 .footer {
   background: var(--color-ink);
-  color: #c9c2d6;
+  color: #b3a9c7;
   font-size: 15px;
 }
 
-.footer p {
-  margin: 0;
+.footer-accent {
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-pink) 0 33%,
+    var(--color-teal) 33% 66%,
+    var(--color-yellow) 66%
+  );
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr;
-  gap: 34px;
-  padding: 52px 0 30px;
-  margin: 15px;
-}
-
-@media (max-width: 760px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 26px;
-  }
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding: 48px 10px 32px;
 }
 
 .footer h4 {
   font-family: var(--font-heading);
   color: var(--color-white);
-  font-size: 1rem;
-  margin: 0 0 12px;
+  font-size: 0.95rem;
+  margin: 0 0 14px;
+}
+
+.footer-brand h4 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.footer-tagline {
+  margin: 0 0 18px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.footer-cta {
+  display: inline-block;
+  background: var(--color-pink);
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.footer-cta:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.footer-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 14px;
 }
 
 .footer a {
-  color: #c9c2d6;
+  color: #b3a9c7;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  color: var(--color-white);
+}
+
+.footer-highlight {
+  color: #5dcaa5;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 18px 0;
-  font-size: 13.5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 16px 0;
+  font-size: 13px;
+  color: #7a6f8f;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 860px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
+  }
 }
