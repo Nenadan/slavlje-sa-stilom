@@ -49,6 +49,10 @@
   .nav {
     display: none;
   }
+
+  .cart-button {
+    margin-left: auto !important;
+  }
 }
 
 .cart-button {

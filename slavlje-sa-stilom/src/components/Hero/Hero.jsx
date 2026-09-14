@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { getIllustration } from '../../utils/illustrations';
 import './Hero.css';
 
@@ -20,9 +21,9 @@ function Hero() {
             korpu, pošaljite nam spisak i dobijate potvrdu sa tačnom cenom i terminom dostave.
           </p>
           <div className="hero-actions">
-            <a className="btn btn-primary" href="#catalog">
+            <Link className="btn btn-primary" to="/katalog">
               Pogledajte katalog
-            </a>
+            </Link>
             <a className="btn btn-outline" href="#how-to-order">
               Kako poručiti
             </a>

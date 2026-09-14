@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import './Header.css';
 
@@ -7,13 +8,13 @@ function Header() {
   return (
     <header className="header">
       <div className="wrap header-inner">
-        <a className="logo" href="#top">
+        <Link className="logo" to="/">
           Slavlje <em>sa stilom</em>
-        </a>
+        </Link>
         <nav className="nav" aria-label="Glavni meni">
-          <a href="#catalog">Katalog</a>
-          <a href="#how-to-order">Kako poručiti</a>
-          <a href="#faq">Pitanja</a>
+          <Link to="/katalog">Katalog</Link>
+          <Link to="/#how-to-order">Kako poručiti</Link>
+          <Link to="/#faq">Pitanja</Link>
           <a href="#contact">Kontakt</a>
         </nav>
         <button
