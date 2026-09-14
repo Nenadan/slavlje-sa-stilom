@@ -1,5 +1,10 @@
 import satenskeRuze1 from '../assets/pokloni/satenske-ruze-1/satenske_ruze-1-1.webp';
 import satenskeRuze2 from '../assets/pokloni/satenske-ruze-1/satenske_ruze-1-2.webp';
+import satenskiVenac1 from '../assets/pokloni/satenski-venci/satenski_venac-1.webp';
+import satenskiVenac2 from '../assets/pokloni/satenski-venci/satenski_venac-2.webp';
+import satenskiVenac3 from '../assets/pokloni/satenski-venci/satenski_venac-3.webp';
+import satenskaKorpica1 from '../assets/pokloni/satenske-korpice/satenska_korpica-1-1.webp';
+import satenskaKorpica2 from '../assets/pokloni/satenske-korpice/satenska_korpica-1-2.webp';
 
 export const categories = ['Sve', 'Baloni', 'Dekoracije', 'Party program', 'Pokloni'];
 
@@ -175,5 +180,41 @@ export const products = [
     unit: 'komad',
     description: 'Večite satenske ruže složene u kutiji u obliku srca, idealne za romantične prilike.',
     images: [satenskeRuze2, satenskeRuze1],
+  },
+  {
+    id: 'k6',
+    category: 'Pokloni',
+    name: 'Satenski venac 1',
+    price: 1500,
+    unit: 'komad',
+    description: 'Ručno rađen satenski venac u tirkiznoj boji, sa crvenom mašnom i cvetovima u crvenoj i beloj boji.',
+    images: [satenskiVenac1],
+  },
+  {
+    id: 'k7',
+    category: 'Pokloni',
+    name: 'Satenski venac 2',
+    price: 1700,
+    unit: 'komad',
+    description: 'Ručno rađen satenski venac u zlatnoj boji, sa crvenom mašnom i cvetovima u tirkiznoj i narandžasto-crvenoj boji.',
+    images: [satenskiVenac2],
+  },
+  {
+    id: 'k8',
+    category: 'Pokloni',
+    name: 'Satenski venac 3',
+    price: 2000,
+    unit: 'komad',
+    description: 'Ručno rađen satenski venac u tirkiznoj boji, sa crvenom i dve zlatne mašne, i cvetovima u crvenoj i beloj boji.',
+    images: [satenskiVenac3],
+  },
+  {
+    id: 'k9',
+    category: 'Pokloni',
+    name: 'Satenske korpice',
+    price: 2200,
+    unit: 'komad',
+    description: 'Ukrasna korpica sa satenskim cvetovima, limenim telom sa novogodišnjim motivom i drškom u crvenoj boji.',
+    images: [satenskaKorpica1, satenskaKorpica2],
   },
 ];
