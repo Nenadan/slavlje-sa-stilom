@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slavlje sa stilom — baloni, dekoracije i party oprema</title>
+<meta name="description" content="Baloni, dekoracije, party program i pokloni za proslave. Sastavite spisak i pošaljite nam ga, javljamo se sa potvrdom i tačnom cenom.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Manrope:wght@400..700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bela:#FFFFFF;
+    --mastilo:#191426;      /* tekst, tamni elementi */
+    --siva:#6B6579;         /* sekundarni tekst */
+    --linija:#E8E5EE;       /* okviri i podele */
+    --magenta:#E31C79;      /* glavni akcenat, cene, CTA */
+    --zuta:#FFC700;         /* oznake i isticanja */
+    --tirkiz:#00A9A5;       /* kategorije, potvrde */
+    --mek:#F7F5FA;          /* blago siva podloga */
+    --max:1240px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+  body{
+    margin:0;background:var(--bela);color:var(--mastilo);
+    font-family:"Manrope",system-ui,sans-serif;font-size:16.5px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Bricolage Grotesque","Manrope",sans-serif;font-weight:700;line-height:1.06;letter-spacing:-.025em;margin:0}
+  a{color:inherit}
+  button{font-family:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+  .section{padding:76px 0}
+  @media (max-width:720px){.section{padding:52px 0}}
+  :focus-visible{outline:3px solid var(--tirkiz);outline-offset:2px;border-radius:4px}
+
+  /* ---------- Traka i zaglavlje ---------- */
+  .traka{background:var(--mastilo);color:#DCD7E6;font-size:13.5px}
+  .traka-in{display:flex;justify-content:space-between;gap:16px;padding:9px 0;flex-wrap:wrap}
+  .traka b{color:var(--zuta);font-weight:700}
+
+  .zaglavlje{position:sticky;top:0;z-index:70;background:var(--bela);border-bottom:1.5px solid var(--linija)}
+  .zag-in{display:flex;align-items:center;gap:26px;height:72px}
+  .logo{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:20px;text-decoration:none;letter-spacing:-.03em;white-space:nowrap}
+  .logo em{font-style:normal;color:var(--magenta)}
+  .meni{display:flex;gap:22px;margin-left:auto;font-size:15.5px;font-weight:600}
+  .meni a{text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+  .meni a:hover{border-bottom-color:var(--magenta)}
+  @media (max-width:940px){.meni{display:none}}
+
+  .dugme-korpa{
+    margin-left:auto;display:inline-flex;align-items:center;gap:9px;
+    background:var(--mastilo);color:var(--bela);border:none;cursor:pointer;
+    padding:11px 18px;border-radius:999px;font-weight:700;font-size:15px;
+  }
+  @media (max-width:940px){.dugme-korpa{margin-left:auto}}
+  .meni + .dugme-korpa{margin-left:0}
+  .brojac{background:var(--magenta);border-radius:999px;min-width:22px;padding:0 7px;font-size:13px;line-height:22px;text-align:center}
+
+  /* ---------- Dugmad ---------- */
+  .btn{display:inline-block;text-decoration:none;text-align:center;font-weight:700;font-size:15.5px;
+       padding:13px 24px;border-radius:10px;border:2px solid transparent;cursor:pointer}
+  .btn-glavno{background:var(--magenta);color:#fff}
+  .btn-glavno:hover{background:#C61568}
+  .btn-obrub{border-color:var(--mastilo);background:#fff;color:var(--mastilo)}
+  .btn-obrub:hover{background:var(--mek)}
+  .btn-tirkiz{background:var(--tirkiz);color:#fff}
+  .btn-tirkiz:hover{background:#008F8B}
+  .btn:disabled{opacity:.45;cursor:not-allowed}
+
+  /* ---------- Hero ---------- */
+  .hero{border-bottom:1.5px solid var(--linija)}
+  .hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;padding:66px 0 70px}
+  @media (max-width:900px){.hero-in{grid-template-columns:1fr;gap:36px;padding:44px 0 50px}}
+  .hero h1{font-size:clamp(2.3rem,5.6vw,4rem)}
+  .hero p.uvod{font-size:clamp(1rem,2.2vw,1.16rem);color:var(--siva);margin:20px 0 0;max-width:48ch}
+  .hero-akcije{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .hero-fakti{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;padding-top:24px;border-top:1.5px solid var(--linija)}
+  .fakt{font-size:14.5px;color:var(--siva);max-width:20ch}
+  .fakt b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.55rem;color:var(--mastilo);line-height:1.1}
+
+  .hero-slika{background:var(--mek);border-radius:18px;padding:18px;line-height:0}
+  .hero-slika svg{width:100%;height:auto;display:block;border-radius:12px}
+
+  /* ---------- Kategorije / filteri ---------- */
+  .filteri{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px}
+  .cip{
+    border:1.5px solid var(--linija);background:#fff;border-radius:999px;
+    padding:9px 18px;font-size:15px;font-weight:600;cursor:pointer;
+  }
+  .cip:hover{border-color:var(--mastilo)}
+  .cip[aria-pressed="true"]{background:var(--mastilo);color:#fff;border-color:var(--mastilo)}
+
+  /* ---------- Proizvodi ---------- */
+  .proizvodi{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  @media (max-width:1050px){.proizvodi{grid-template-columns:repeat(3,1fr)}}
+  @media (max-width:800px){.proizvodi{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:480px){.proizvodi{grid-template-columns:1fr}}
+
+  .proizvod{border:1.5px solid var(--linija);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;background:#fff}
+  .proizvod .slika{line-height:0;position:relative}
+  .proizvod .slika svg{width:100%;height:auto;display:block}
+  .oznaka{
+    position:absolute;top:12px;left:12px;background:var(--zuta);color:var(--mastilo);
+    font-size:12.5px;font-weight:700;padding:4px 10px;border-radius:6px;
+  }
+  .proizvod .telo{padding:16px 16px 18px;display:flex;flex-direction:column;flex:1}
+  .kat{font-size:12.5px;color:var(--tirkiz);font-weight:700;margin-bottom:6px}
+  .proizvod h3{font-size:1.08rem;letter-spacing:-.015em}
+  .proizvod .opis{font-size:14px;color:var(--siva);margin:8px 0 14px;flex:1}
+  .cena{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.3rem;color:var(--magenta)}
+  .cena small{font-family:"Manrope",sans-serif;font-weight:500;font-size:12.5px;color:var(--siva);display:block;letter-spacing:0}
+  .red-dodaj{display:flex;align-items:center;gap:10px;margin-top:14px}
+  .red-dodaj .btn{flex:1;padding:11px 14px;font-size:14.5px}
+  .dodato{background:var(--tirkiz)!important;border-color:var(--tirkiz)!important;color:#fff!important}
+
+  /* ---------- Kako do porudžbine ---------- */
+  .postupak{background:var(--mek)}
+  .postupak-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:36px}
+  @media (max-width:820px){.postupak-grid{grid-template-columns:1fr}}
+  .korak{background:#fff;border:1.5px solid var(--linija);border-radius:14px;padding:24px}
+  .korak b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.9rem;color:var(--magenta);display:block;line-height:1;margin-bottom:12px}
+  .korak h3{font-size:1.1rem;margin-bottom:7px}
+  .korak p{margin:0;font-size:15px;color:var(--siva)}
+
+  .naslov-blok{max-width:620px}
+  .naslov-blok h2{font-size:clamp(1.8rem,4vw,2.7rem)}
+  .naslov-blok p{color:var(--siva);margin:14px 0 0}
+  .naslov-red{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:34px;flex-wrap:wrap}
+
+  /* ---------- Pitanja ---------- */
+  .pitanje{border-top:1.5px solid var(--linija)}
+  .pitanje:last-child{border-bottom:1.5px solid var(--linija)}
+  .pitanje summary{cursor:pointer;padding:20px 0;font-weight:700;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  .pitanje summary::-webkit-details-marker{display:none}
+  .pitanje summary::after{content:"+";color:var(--magenta);font-size:1.4rem;line-height:1}
+  .pitanje[open] summary::after{content:"–"}
+  .pitanje p{margin:0 0 20px;color:var(--siva);max-width:70ch}
+
+  /* ---------- Podnožje ---------- */
+  .podnozje{background:var(--mastilo);color:#C9C2D6;font-size:15px}
+  .pod-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:34px;padding:52px 0 30px}
+  @media (max-width:760px){.pod-grid{grid-template-columns:1fr;gap:26px}}
+  .podnozje h4{font-family:"Bricolage Grotesque",sans-serif;color:#fff;font-size:1rem;margin:0 0 12px}
+  .podnozje a{color:#C9C2D6}
+  .pod-dole{border-top:1px solid rgba(255,255,255,.14);padding:18px 0;font-size:13.5px}
+
+  /* ---------- Korpa ---------- */
+  .zastor{position:fixed;inset:0;background:rgba(25,20,38,.55);opacity:0;pointer-events:none;transition:opacity .2s;z-index:90}
+  .zastor.otvoren{opacity:1;pointer-events:auto}
+  .korpa{
+    position:fixed;top:0;right:0;height:100dvh;width:min(460px,100%);background:#fff;z-index:100;
+    display:flex;flex-direction:column;transform:translateX(100%);transition:transform .25s ease;
+    box-shadow:-10px 0 40px rgba(25,20,38,.18);
+  }
+  @media (prefers-reduced-motion:reduce){.korpa{transition:none}}
+  .korpa.otvorena{transform:none}
+  .korpa-vrh{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1.5px solid var(--linija)}
+  .korpa-vrh h2{font-size:1.3rem}
+  .zatvori{background:none;border:none;font-size:26px;line-height:1;cursor:pointer;color:var(--siva);padding:4px 8px}
+  .korpa-telo{flex:1;overflow-y:auto;padding:8px 22px 22px}
+  .prazna{color:var(--siva);padding:36px 0;text-align:center}
+  .prazna b{display:block;color:var(--mastilo);font-size:1.05rem;margin-bottom:6px}
+
+  .stavka{display:grid;grid-template-columns:1fr auto;gap:8px 14px;padding:16px 0;border-bottom:1px solid var(--linija)}
+  .stavka h4{margin:0;font-size:15.5px;font-weight:700}
+  .stavka .sitno{font-size:13px;color:var(--siva)}
+  .kolicina{display:flex;align-items:center;gap:2px;border:1.5px solid var(--linija);border-radius:8px;overflow:hidden}
+  .kolicina button{width:32px;height:32px;border:none;background:#fff;cursor:pointer;font-size:17px;color:var(--mastilo)}
+  .kolicina button:hover{background:var(--mek)}
+  .kolicina span{min-width:28px;text-align:center;font-weight:700;font-size:14.5px}
+  .iznos{font-weight:700;text-align:right;white-space:nowrap}
+  .ukloni{background:none;border:none;color:var(--siva);font-size:13px;cursor:pointer;padding:0;text-decoration:underline;justify-self:start}
+
+  .korpa-dno{border-top:1.5px solid var(--linija);padding:18px 22px 22px;background:var(--mek)}
+  .zbir{display:flex;justify-content:space-between;font-size:14.5px;color:var(--siva);margin-bottom:6px}
+  .zbir.ukupno{color:var(--mastilo);font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.25rem;margin:10px 0 16px}
+  .polja{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+  .polje{display:flex;flex-direction:column;gap:5px}
+  .polje.puno{grid-column:1/-1}
+  .polje label{font-size:13px;color:var(--siva);font-weight:600}
+  .polje input,.polje textarea{
+    font-family:inherit;font-size:15px;border:1.5px solid var(--linija);border-radius:9px;padding:10px 12px;background:#fff;color:var(--mastilo);
+  }
+  .polje textarea{min-height:64px;resize:vertical}
+  .greska{color:#C61568;font-size:13.5px;margin:0 0 10px;font-weight:600}
+  .korpa-dno .btn{width:100%}
+  .pomocna{margin:10px 0 0;font-size:12.5px;color:var(--siva);text-align:center}
+  .drugo-dugme{margin-top:8px}
+</style>
+</head>
+<body>
+
+<div class="traka">
+  <div class="wrap traka-in">
+    <span>Dostava u Beogradu istog dana za porudžbine do 13h. <b>Besplatno preko 6.000 din.</b></span>
+    <span>060 000 0000 &nbsp;&nbsp; zdravo@slavljesastilom.rs</span>
+  </div>
+</div>
+
+<header class="zaglavlje">
+  <div class="wrap zag-in">
+    <a class="logo" href="#vrh">Slavlje <em>sa stilom</em></a>
+    <nav class="meni" aria-label="Glavni meni">
+      <a href="#katalog">Katalog</a>
+      <a href="#kako">Kako poručiti</a>
+      <a href="#pitanja">Pitanja</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <button class="dugme-korpa" id="otvoriKorpu" aria-haspopup="dialog">
+      Korpa <span class="brojac" id="brojac">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="vrh">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <h1>Sastavite spisak za proslavu, ostalo je na nama.</h1>
+        <p class="uvod">Baloni, dekoracije, party oprema i pokloni na jednom mestu. Dodajte šta vam treba u korpu, pošaljite nam spisak i dobijate potvrdu sa tačnom cenom i terminom dostave.</p>
+        <div class="hero-akcije">
+          <a class="btn btn-glavno" href="#katalog">Pogledajte katalog</a>
+          <a class="btn btn-obrub" href="#kako">Kako poručiti</a>
+        </div>
+        <div class="hero-fakti">
+          <div class="fakt"><b>1.400+</b>proslava opremljeno od 2019.</div>
+          <div class="fakt"><b>do 13h</b>rok za dostavu istog dana</div>
+          <div class="fakt"><b>2 sata</b>prosečno vreme postavke</div>
+        </div>
+      </div>
+      <div class="hero-slika" aria-hidden="true"><svg id="heroSvg" viewBox="0 0 600 460" xmlns="http://www.w3.org/2000/svg"></svg></div>
+    </div>
+  </section>
+
+  <!-- KATALOG -->
+  <section class="section" id="katalog">
+    <div class="wrap">
+      <div class="naslov-red">
+        <div class="naslov-blok">
+          <h2>Katalog</h2>
+          <p>Cene su sa PDV-om. Za količine veće od prikazanih napišite nam u napomeni pa šaljemo poseban predlog.</p>
+        </div>
+      </div>
+
+      <div class="filteri" id="filteri" role="group" aria-label="Kategorije"></div>
+      <div class="proizvodi" id="proizvodi"></div>
+      <p id="nemaRezultata" style="display:none;color:var(--siva);padding:30px 0">U ovoj kategoriji trenutno nema artikala. Izaberite drugu kategoriju ili nam pišite šta tražite.</p>
+    </div>
+  </section>
+
+  <!-- KAKO PORUČITI -->
+  <section class="section postupak" id="kako">
+    <div class="wrap">
+      <div class="naslov-blok">
+        <h2>Kako poručiti</h2>
+        <p>Nema plaćanja na sajtu. Korpa je spisak želja koji nam šaljete, a mi ga potvrđujemo.</p>
+      </div>
+      <div class="postupak-grid">
+        <div class="korak">
+          <b>1</b>
+          <h3>Napunite korpu</h3>
+          <p>Izaberite artikle i količine. Možete da promenite sve dok ne pošaljete spisak.</p>
+        </div>
+        <div class="korak">
+          <b>2</b>
+          <h3>Pošaljite spisak</h3>
+          <p>Upišite ime, telefon, adresu i datum. Klikom se otvara vaš mejl program sa već popunjenom porudžbinom.</p>
+        </div>
+        <div class="korak">
+          <b>3</b>
+          <h3>Potvrđujemo</h3>
+          <p>Javljamo se u roku od dva sata radnim danima, sa konačnom cenom, dostupnošću i terminom dostave.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PITANJA -->
+  <section class="section" id="pitanja">
+    <div class="wrap" style="max-width:860px">
+      <div class="naslov-blok" style="margin-bottom:30px">
+        <h2>Česta pitanja</h2>
+      </div>
+      <details class="pitanje">
+        <summary>Da li se plaća preko sajta?</summary>
+        <p>Ne. Korpa služi da nam pošaljete spisak. Plaća se gotovinom pri preuzimanju, karticom u radnji ili uplatom na račun za firme.</p>
+      </details>
+      <details class="pitanje">
+        <summary>Koliko dugo traju helijumski baloni?</summary>
+        <p>Latex baloni tretirani zaštitom drže od 12 do 24 sata, folija baloni od tri do sedam dana. Za celodnevne proslave preporučujemo dostavu ujutru na dan događaja.</p>
+      </details>
+      <details class="pitanje">
+        <summary>Da li izlazite van Beograda?</summary>
+        <p>Da, do 60 kilometara. Prevoz se naplaćuje 60 dinara po kilometru u oba smera i unosi se u potvrdu porudžbine.</p>
+      </details>
+      <details class="pitanje">
+        <summary>Mogu li da promenim boje na dekoraciji?</summary>
+        <p>Boje balona, štampu i rekvizite menjamo bez doplate. Napišite željene boje u polje za napomenu pri slanju korpe.</p>
+      </details>
+      <details class="pitanje">
+        <summary>Šta ako otkažem proslavu?</summary>
+        <p>Besplatno otkazivanje do 72 sata pre termina. Posle toga se zadržava akontacija od 30 odsto, jer je materijal već naručen.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer class="podnozje" id="kontakt">
+  <div class="wrap pod-grid">
+    <div>
+      <h4>Slavlje sa stilom</h4>
+      <p style="margin:0">Radnja i radionica: Glavna 1, Zemun<br>
+      Ponedeljak do subote, 10 do 19<br>
+      Nedeljom po dogovoru za dostave</p>
+    </div>
+    <div>
+      <h4>Kontakt</h4>
+      <p style="margin:0">
+        Telefon i Viber: <a href="tel:+381600000000">060 000 0000</a><br>
+        Mejl: <a href="mailto:zdravo@slavljesastilom.rs">zdravo@slavljesastilom.rs</a><br>
+        Instagram: <a href="#">@slavlje.sa.stilom</a>
+      </p>
+    </div>
+    <div>
+      <h4>Dostava</h4>
+      <p style="margin:0">Beograd i okolina do 60 km.<br>
+      Istog dana za porudžbine do 13 časova.<br>
+      Besplatno preko 6.000 dinara.</p>
+    </div>
+  </div>
+  <div class="wrap pod-dole">Primer sajta. Podaci o firmi, cene i rokovi su izmišljeni radi prikaza.</div>
+</footer>
+
+<!-- KORPA -->
+<div class="zastor" id="zastor"></div>
+<aside class="korpa" id="korpa" role="dialog" aria-modal="true" aria-labelledby="korpaNaslov" aria-hidden="true">
+  <div class="korpa-vrh">
+    <h2 id="korpaNaslov">Vaš spisak</h2>
+    <button class="zatvori" id="zatvoriKorpu" aria-label="Zatvorite korpu">×</button>
+  </div>
+  <div class="korpa-telo" id="korpaTelo"></div>
+  <div class="korpa-dno" id="korpaDno" style="display:none">
+    <div class="zbir"><span>Artikli</span><span id="zbirArtikli">0 din</span></div>
+    <div class="zbir"><span>Dostava</span><span id="zbirDostava">–</span></div>
+    <div class="zbir ukupno"><span>Ukupno</span><span id="zbirUkupno">0 din</span></div>
+
+    <div class="polja">
+      <div class="polje">
+        <label for="kIme">Ime i prezime</label>
+        <input id="kIme" type="text" autocomplete="name">
+      </div>
+      <div class="polje">
+        <label for="kTel">Telefon</label>
+        <input id="kTel" type="tel" autocomplete="tel" placeholder="06x xxx xxxx">
+      </div>
+      <div class="polje">
+        <label for="kDatum">Datum proslave</label>
+        <input id="kDatum" type="date">
+      </div>
+      <div class="polje">
+        <label for="kAdresa">Adresa dostave</label>
+        <input id="kAdresa" type="text" autocomplete="street-address">
+      </div>
+      <div class="polje puno">
+        <label for="kNapomena">Napomena: boje, vreme dostave, ime na balonima</label>
+        <textarea id="kNapomena"></textarea>
+      </div>
+    </div>
+
+    <p class="greska" id="kGreska" role="alert" style="display:none"></p>
+    <button class="btn btn-glavno" id="posaljiMejl">Pošaljite spisak mejlom</button>
+    <button class="btn btn-obrub drugo-dugme" id="kopiraj">Kopirajte spisak za Viber</button>
+    <p class="pomocna">Slanjem se otvara vaš mejl program sa popunjenom porudžbinom. Ništa se ne naplaćuje.</p>
+  </div>
+</aside>
+
+<script>
+(function(){
+  "use strict";
+
+  var PRIMALAC = "zdravo@slavljesastilom.rs";
+  var PRAG_BESPLATNO = 6000;
+  var CENA_DOSTAVE = 690;
+
+  /* ---------- Podaci o proizvodima ---------- */
+  var KATEGORIJE = ["Sve", "Baloni", "Dekoracije", "Party program", "Pokloni"];
+
+  var PROIZVODI = [
+    {id:"b1", kat:"Baloni", ime:"Balon broj, 100 cm", cena:1490, jed:"po cifri", opis:"Folija cifra sa helijumom, u zlatnoj, srebrnoj, roze ili crnoj.", crtez:"broj", boje:["#FFC700","#E31C79"], oznaka:"Najtraženije"},
+    {id:"b2", kat:"Baloni", ime:"Buket od 9 balona", cena:2190, jed:"buket", opis:"Helijumski baloni u tri boje po izboru, sa tegom i vrpcom.", crtez:"buket", boje:["#E31C79","#00A9A5","#FFC700"]},
+    {id:"b3", kat:"Baloni", ime:"Balon sa konfetama", cena:390, jed:"komad", opis:"Providan balon punjen konfetama, prečnik 30 cm.", crtez:"konfete", boje:["#B8A2F0","#E31C79"]},
+    {id:"b4", kat:"Baloni", ime:"Balon iznenađenja, 90 cm", cena:2890, jed:"komad", opis:"Veliki balon koji puca nad slavljenikom, punjen konfetama i sitnim balonima.", crtez:"veliki", boje:["#00A9A5","#FFC700"]},
+
+    {id:"d1", kat:"Dekoracije", ime:"Balon luk, 3 metra", cena:11900, jed:"postavka", opis:"Organski luk u četiri boje, sa konstrukcijom, postavkom i skidanjem.", crtez:"luk", boje:["#E31C79","#FFC700","#00A9A5","#F7F5FA"], oznaka:"Sa postavkom"},
+    {id:"d2", kat:"Dekoracije", ime:"Foto zid sa štampom", cena:16500, jed:"postavka", opis:"Pozadina 2×2 m sa vašim tekstom, ram, baloni i rekviziti za slikanje.", crtez:"zid", boje:["#00A9A5","#FFC700"]},
+    {id:"d3", kat:"Dekoracije", ime:"Dekoracija slatkog stola", cena:7400, jed:"postavka", opis:"Stolnjak, postolja za kolače, natpis i balonski detalji u vašim bojama.", crtez:"sto", boje:["#E31C79","#B8A2F0"]},
+    {id:"d4", kat:"Dekoracije", ime:"Svetleći natpis za iznajmljivanje", cena:4900, jed:"veče", opis:"Slova visine 80 cm na baterije. Dostupno: SREĆAN ROĐENDAN, LOVE, 18.", crtez:"natpis", boje:["#FFC700","#191426"]},
+
+    {id:"p1", kat:"Party program", ime:"Set za sto, 12 osoba", cena:2650, jed:"set", opis:"Tanjiri, čaše, salvete, escajg i slamčice u jednoj šemi boja.", crtez:"set", boje:["#E31C79","#FFC700"]},
+    {id:"p2", kat:"Party program", ime:"Pinjata sa štapom", cena:2290, jed:"komad", opis:"Ručno rađena pinjata, oblik i boje po dogovoru. Slatkiši se dodaju posebno.", crtez:"pinjata", boje:["#00A9A5","#E31C79"]},
+    {id:"p3", kat:"Party program", ime:"Prskalice za tortu, 4 komada", cena:450, jed:"pakovanje", opis:"Hladni vulkani visine 15 cm, gore oko 40 sekundi.", crtez:"prskalice", boje:["#FFC700","#191426"]},
+    {id:"p4", kat:"Party program", ime:"Kapice i duvaljke, 10 komada", cena:890, jed:"pakovanje", opis:"Karton sa mat premazom, u pastelnim ili jarkim bojama.", crtez:"kapice", boje:["#B8A2F0","#00A9A5"]},
+
+    {id:"k1", kat:"Pokloni", ime:"Kutija sa balonima i porukom", cena:3900, jed:"komad", opis:"Crna kutija iz koje izleću baloni, sa rukom pisanom čestitkom.", crtez:"kutija", boje:["#191426","#FFC700"], oznaka:"Za iznenađenje"},
+    {id:"k2", kat:"Pokloni", ime:"Korpa za prvi rođendan", cena:5600, jed:"komad", opis:"Igračka, čestitka, balon sa imenom i sitnice za mamu.", crtez:"korpa", boje:["#B8A2F0","#FFC700"]},
+    {id:"k3", kat:"Pokloni", ime:"Buket od slatkiša", cena:3200, jed:"komad", opis:"Slatkiši složeni u buket, u tri veličine. Prikazana je srednja.", crtez:"buketslatko", boje:["#E31C79","#00A9A5"]},
+    {id:"k4", kat:"Pokloni", ime:"Čestitka sa štampom po meri", cena:690, jed:"komad", opis:"Format A5, vaš tekst i boje, rok izrade jedan radni dan.", crtez:"cestitka", boje:["#00A9A5","#E31C79"]}
+  ];
+
+  /* ---------- Crteži umesto fotografija ---------- */
+  var seed = 42;
+  function rnd(){ seed = (seed*1103515245+12345) % 2147483648; return seed/2147483648; }
+
+  function balon(x,y,r,boja){
+    return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="'+boja+'"/>'+
+           '<circle cx="'+(x-r*0.3)+'" cy="'+(y-r*0.34)+'" r="'+(r*0.17)+'" fill="#fff" opacity="0.4"/>';
+  }
+
+  function crtez(tip, boje, W, H){
+    W = W || 320; H = H || 240;
+    var pozadine = {broj:"#FFF6D6",buket:"#FDE7F1",konfete:"#F1ECFD",veliki:"#DFF4F3",
+                    luk:"#FDE7F1",zid:"#DFF4F3",sto:"#F1ECFD",natpis:"#FFF6D6",
+                    set:"#FDE7F1",pinjata:"#DFF4F3",prskalice:"#FFF6D6",kapice:"#F1ECFD",
+                    kutija:"#FFF6D6",korpa:"#F1ECFD",buketslatko:"#FDE7F1",cestitka:"#DFF4F3"};
+    var s = '<svg viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">';
+    s += '<rect width="'+W+'" height="'+H+'" fill="'+(pozadine[tip]||"#F7F5FA")+'"/>';
+    var cx = W/2, a = boje[0], b = boje[1]||boje[0], c = boje[2]||a, d = boje[3]||b;
+
+    switch(tip){
+      case "broj":
+        s += '<path d="M'+(cx-46)+' '+(H*0.32)+' q26 -34 52 0 v78 q-26 34 -52 0 z" fill="'+a+'"/>';
+        s += '<ellipse cx="'+(cx-20)+'" cy="'+(H*0.56)+'" rx="16" ry="26" fill="'+(pozadine[tip])+'"/>';
+        s += '<path d="M'+(cx+30)+' '+(H*0.34)+' h30 v76" stroke="'+b+'" stroke-width="20" fill="none" stroke-linecap="round"/>';
+        s += '<path d="M'+(cx-20)+' '+(H*0.78)+' q10 22 -6 34" stroke="#191426" stroke-width="2" fill="none"/>';
+        break;
+      case "buket":
+        for (var i=0;i<9;i++){
+          var ax = cx-60+ (i%3)*60, ay = H*0.24 + Math.floor(i/3)*40 + (rnd()*10);
+          s += '<line x1="'+ax+'" y1="'+ay+'" x2="'+cx+'" y2="'+(H*0.86)+'" stroke="#191426" stroke-width="1.2" opacity=".45"/>';
+        }
+        for (var j=0;j<9;j++){
+          var bx = cx-60+(j%3)*60, by = H*0.24 + Math.floor(j/3)*40;
+          s += balon(bx,by,23,[a,b,c][j%3]);
+        }
+        s += '<rect x="'+(cx-14)+'" y="'+(H*0.86)+'" width="28" height="18" rx="4" fill="#191426"/>';
+        break;
+      case "konfete":
+        s += '<circle cx="'+cx+'" cy="'+(H*0.45)+'" r="62" fill="#fff" stroke="'+a+'" stroke-width="3"/>';
+        for (var k=0;k<22;k++){
+          var t=rnd()*Math.PI*2, rr=rnd()*48;
+          s += '<rect x="'+(cx+Math.cos(t)*rr)+'" y="'+(H*0.45+Math.sin(t)*rr)+'" width="7" height="7" rx="1.5" fill="'+(k%2?a:b)+'" transform="rotate('+(rnd()*90)+' '+cx+' '+(H*0.45)+')"/>';
+        }
+        s += '<line x1="'+cx+'" y1="'+(H*0.45+62)+'" x2="'+cx+'" y2="'+(H*0.92)+'" stroke="#191426" stroke-width="1.6"/>';
+        break;
+      case "veliki":
+        s += balon(cx, H*0.44, 72, a);
+        for (var m=0;m<10;m++){ s += balon(cx-70+rnd()*140, H*0.2+rnd()*50, 7+rnd()*7, b); }
+        break;
+      case "luk":
+        for (var n=0;n<=22;n++){
+          var tt = Math.PI*(n/22);
+          var x2 = cx - Math.cos(tt)*128 + (rnd()-0.5)*12;
+          var y2 = H*0.92 - Math.sin(tt)*150 + (rnd()-0.5)*12;
+          s += balon(x2,y2, 11+rnd()*9, [a,b,c,d][n%4]);
+        }
+        break;
+      case "zid":
+        s += '<rect x="'+(cx-88)+'" y="'+(H*0.16)+'" width="176" height="150" rx="10" fill="#fff" stroke="'+a+'" stroke-width="3"/>';
+        s += '<rect x="'+(cx-58)+'" y="'+(H*0.34)+'" width="116" height="10" rx="5" fill="'+a+'"/>';
+        s += '<rect x="'+(cx-40)+'" y="'+(H*0.46)+'" width="80" height="8" rx="4" fill="'+b+'"/>';
+        for (var q=0;q<7;q++){ s += balon(cx-88+q*12+ (q>3?150:0), H*0.16+q*16, 12, q%2?a:b); }
+        break;
+      case "sto":
+        s += '<rect x="'+(cx-95)+'" y="'+(H*0.62)+'" width="190" height="12" rx="6" fill="#191426"/>';
+        s += '<rect x="'+(cx-88)+'" y="'+(H*0.74)+'" width="176" height="34" fill="#fff" opacity=".8"/>';
+        s += '<rect x="'+(cx-60)+'" y="'+(H*0.46)+'" width="44" height="40" rx="5" fill="#fff"/>';
+        s += '<rect x="'+(cx-60)+'" y="'+(H*0.46)+'" width="44" height="11" rx="5" fill="'+a+'"/>';
+        s += '<circle cx="'+(cx+30)+'" cy="'+(H*0.55)+'" r="24" fill="#fff"/><circle cx="'+(cx+30)+'" cy="'+(H*0.55)+'" r="12" fill="'+b+'"/>';
+        for (var p=0;p<5;p++){ s += balon(cx-70+p*36, H*0.2+ (p%2?14:0), 17, p%2?a:b); }
+        break;
+      case "natpis":
+        s += '<rect x="'+(cx-96)+'" y="'+(H*0.3)+'" width="192" height="86" rx="8" fill="'+b+'"/>';
+        var slova=[0,1,2,3,4];
+        slova.forEach(function(v,i2){ s += '<rect x="'+(cx-78+i2*34)+'" y="'+(H*0.38)+'" width="24" height="52" rx="4" fill="'+a+'"/>'; });
+        for (var z=0;z<5;z++){ s += '<circle cx="'+(cx-66+z*34)+'" cy="'+(H*0.44)+'" r="4" fill="#fff"/>'; }
+        break;
+      case "set":
+        s += '<circle cx="'+(cx-46)+'" cy="'+(H*0.5)+'" r="40" fill="#fff"/><circle cx="'+(cx-46)+'" cy="'+(H*0.5)+'" r="27" fill="'+a+'"/>';
+        s += '<path d="M'+(cx+26)+' '+(H*0.34)+' h44 l-7 62 h-30 z" fill="'+b+'"/>';
+        s += '<rect x="'+(cx+18)+'" y="'+(H*0.3)+'" width="6" height="70" rx="3" fill="'+a+'" transform="rotate(14 '+(cx+18)+' '+(H*0.3)+')"/>';
+        break;
+      case "pinjata":
+        s += '<path d="M'+(cx-54)+' '+(H*0.38)+' h108 l-16 74 h-76 z" fill="'+a+'"/>';
+        for (var w=0;w<5;w++){ s += '<rect x="'+(cx-54)+'" y="'+(H*0.38+w*15)+'" width="108" height="6" fill="'+b+'" opacity=".85"/>'; }
+        s += '<line x1="'+cx+'" y1="'+(H*0.14)+'" x2="'+cx+'" y2="'+(H*0.38)+'" stroke="#191426" stroke-width="2"/>';
+        s += '<rect x="'+(cx+58)+'" y="'+(H*0.5)+'" width="8" height="60" rx="4" fill="#191426" transform="rotate(18 '+(cx+58)+' '+(H*0.5)+')"/>';
+        break;
+      case "prskalice":
+        for (var pr=0;pr<4;pr++){
+          var px = cx-54+pr*36;
+          s += '<rect x="'+px+'" y="'+(H*0.5)+'" width="9" height="60" rx="4" fill="'+b+'"/>';
+          s += '<path d="M'+(px+4.5)+' '+(H*0.5)+' l-12 -30 M'+(px+4.5)+' '+(H*0.5)+' l0 -38 M'+(px+4.5)+' '+(H*0.5)+' l12 -30" stroke="'+a+'" stroke-width="3" stroke-linecap="round"/>';
+        }
+        break;
+      case "kapice":
+        for (var kp=0;kp<3;kp++){
+          var kx = cx-70+kp*70;
+          s += '<path d="M'+kx+' '+(H*0.68)+' l26 -76 l26 76 z" fill="'+(kp%2?a:b)+'"/>';
+          s += '<circle cx="'+(kx+26)+'" cy="'+(H*0.68-78)+'" r="7" fill="#fff"/>';
+        }
+        break;
+      case "kutija":
+        s += '<rect x="'+(cx-52)+'" y="'+(H*0.55)+'" width="104" height="76" rx="6" fill="'+a+'"/>';
+        s += '<rect x="'+(cx-8)+'" y="'+(H*0.55)+'" width="16" height="76" fill="'+b+'"/>';
+        for (var ku=0;ku<7;ku++){ s += balon(cx-56+ku*19, H*0.34-rnd()*40, 11, ku%2?b:"#E31C79"); }
+        break;
+      case "korpa":
+        s += '<path d="M'+(cx-58)+' '+(H*0.54)+' h116 l-12 68 h-92 z" fill="'+a+'"/>';
+        s += '<path d="M'+(cx-40)+' '+(H*0.54)+' a40 40 0 0 1 80 0" fill="none" stroke="'+a+'" stroke-width="6"/>';
+        s += balon(cx+2, H*0.3, 22, b);
+        s += '<rect x="'+(cx-44)+'" y="'+(H*0.58)+'" width="34" height="26" rx="4" fill="#fff"/>';
+        break;
+      case "buketslatko":
+        s += '<path d="M'+(cx-20)+' '+(H*0.92)+' l14 -46 h12 l14 46 z" fill="#fff"/>';
+        for (var bs=0;bs<8;bs++){
+          var bx2 = cx-52+ (bs%4)*35, by2 = H*0.3 + Math.floor(bs/4)*34;
+          s += '<circle cx="'+bx2+'" cy="'+by2+'" r="15" fill="'+(bs%2?a:b)+'"/>';
+          s += '<line x1="'+bx2+'" y1="'+by2+'" x2="'+cx+'" y2="'+(H*0.7)+'" stroke="#191426" stroke-width="1" opacity=".35"/>';
+        }
+        break;
+      case "cestitka":
+        s += '<rect x="'+(cx-56)+'" y="'+(H*0.26)+'" width="112" height="120" rx="6" fill="#fff" stroke="'+a+'" stroke-width="2.5"/>';
+        s += '<rect x="'+(cx-36)+'" y="'+(H*0.38)+'" width="72" height="9" rx="4.5" fill="'+b+'"/>';
+        s += '<rect x="'+(cx-36)+'" y="'+(H*0.5)+'" width="52" height="7" rx="3.5" fill="'+a+'" opacity=".5"/>';
+        s += '<rect x="'+(cx-36)+'" y="'+(H*0.6)+'" width="62" height="7" rx="3.5" fill="'+a+'" opacity=".5"/>';
+        break;
+      default:
+        s += balon(cx, H*0.5, 44, a);
+    }
+    s += '</svg>';
+    return s;
+  }
+
+  /* ---------- Hero crtež ---------- */
+  document.getElementById("heroSvg").outerHTML =
+    crtez("luk", ["#E31C79","#FFC700","#00A9A5","#B8A2F0"], 600, 460).replace("<svg ", '<svg id="heroSvg" ');
+
+  /* ---------- Prikaz kataloga ---------- */
+  var aktivna = "Sve";
+  var elFilteri = document.getElementById("filteri");
+  var elProizvodi = document.getElementById("proizvodi");
+  var elNema = document.getElementById("nemaRezultata");
+
+  KATEGORIJE.forEach(function(k){
+    var b = document.createElement("button");
+    b.className = "cip";
+    b.type = "button";
+    b.textContent = k;
+    b.setAttribute("aria-pressed", k === aktivna ? "true" : "false");
+    b.addEventListener("click", function(){
+      aktivna = k;
+      Array.prototype.forEach.call(elFilteri.children, function(d){
+        d.setAttribute("aria-pressed", d.textContent === k ? "true" : "false");
+      });
+      nacrtajProizvode();
+    });
+    elFilteri.appendChild(b);
+  });
+
+  function dinari(n){ return n.toLocaleString("sr-RS") + " din"; }
+
+  function nacrtajProizvode(){
+    var lista = PROIZVODI.filter(function(p){ return aktivna === "Sve" || p.kat === aktivna; });
+    elProizvodi.innerHTML = "";
+    elNema.style.display = lista.length ? "none" : "block";
+
+    lista.forEach(function(p){
+      var el = document.createElement("article");
+      el.className = "proizvod";
+      el.innerHTML =
+        '<div class="slika">' + crtez(p.crtez, p.boje) +
+          (p.oznaka ? '<span class="oznaka">'+p.oznaka+'</span>' : '') +
+        '</div>' +
+        '<div class="telo">' +
+          '<div class="kat">'+p.kat+'</div>' +
+          '<h3>'+p.ime+'</h3>' +
+          '<p class="opis">'+p.opis+'</p>' +
+          '<span class="cena">'+dinari(p.cena)+'<small>'+p.jed+'</small></span>' +
+          '<div class="red-dodaj">' +
+            '<button class="btn btn-glavno" data-id="'+p.id+'">Dodajte u korpu</button>' +
+          '</div>' +
+        '</div>';
+      elProizvodi.appendChild(el);
+    });
+  }
+  nacrtajProizvode();
+
+  /* ---------- Korpa (u memoriji, briše se osvežavanjem stranice) ---------- */
+  var korpa = [];
+
+  elProizvodi.addEventListener("click", function(e){
+    var dug = e.target.closest("button[data-id]");
+    if (!dug) return;
+    dodaj(dug.getAttribute("data-id"));
+    var stari = dug.textContent;
+    dug.textContent = "Dodato";
+    dug.classList.add("dodato");
+    setTimeout(function(){ dug.textContent = stari; dug.classList.remove("dodato"); }, 1100);
+  });
+
+  function dodaj(id){
+    var p = PROIZVODI.find(function(x){ return x.id === id; });
+    if (!p) return;
+    var s = korpa.find(function(x){ return x.id === id; });
+    if (s) { s.kol++; } else { korpa.push({id:p.id, ime:p.ime, cena:p.cena, jed:p.jed, kol:1}); }
+    osvezi();
+  }
+
+  function promeni(id, delta){
+    var s = korpa.find(function(x){ return x.id === id; });
+    if (!s) return;
+    s.kol += delta;
+    if (s.kol < 1) korpa = korpa.filter(function(x){ return x.id !== id; });
+    osvezi();
+  }
+
+  function ukloni(id){ korpa = korpa.filter(function(x){ return x.id !== id; }); osvezi(); }
+
+  function zbirArtikala(){ return korpa.reduce(function(a,s){ return a + s.cena*s.kol; }, 0); }
+  function dostava(){ if (!korpa.length) return 0; return zbirArtikala() >= PRAG_BESPLATNO ? 0 : CENA_DOSTAVE; }
+
+  var elTelo = document.getElementById("korpaTelo");
+  var elDno = document.getElementById("korpaDno");
+  var elBrojac = document.getElementById("brojac");
+
+  function osvezi(){
+    var komada = korpa.reduce(function(a,s){ return a+s.kol; }, 0);
+    elBrojac.textContent = komada;
+
+    if (!korpa.length){
+      elTelo.innerHTML = '<div class="prazna"><b>Korpa je prazna</b>Dodajte artikle iz kataloga pa ćemo vam spisak potvrditi mejlom.</div>';
+      elDno.style.display = "none";
+      return;
+    }
+
+    elDno.style.display = "block";
+    elTelo.innerHTML = korpa.map(function(s){
+      return '<div class="stavka">' +
+        '<div><h4>'+s.ime+'</h4><div class="sitno">'+dinari(s.cena)+' '+s.jed+'</div></div>' +
+        '<div class="iznos">'+dinari(s.cena*s.kol)+'</div>' +
+        '<div class="kolicina">' +
+          '<button type="button" data-manje="'+s.id+'" aria-label="Smanjite količinu">−</button>' +
+          '<span>'+s.kol+'</span>' +
+          '<button type="button" data-vise="'+s.id+'" aria-label="Povećajte količinu">+</button>' +
+        '</div>' +
+        '<button class="ukloni" type="button" data-ukloni="'+s.id+'">Uklonite</button>' +
+      '</div>';
+    }).join("");
+
+    document.getElementById("zbirArtikli").textContent = dinari(zbirArtikala());
+    document.getElementById("zbirDostava").textContent = dostava() === 0 ? "besplatno" : dinari(dostava());
+    document.getElementById("zbirUkupno").textContent = dinari(zbirArtikala() + dostava());
+  }
+
+  elTelo.addEventListener("click", function(e){
+    var t = e.target;
+    if (t.dataset.vise) promeni(t.dataset.vise, 1);
+    else if (t.dataset.manje) promeni(t.dataset.manje, -1);
+    else if (t.dataset.ukloni) ukloni(t.dataset.ukloni);
+  });
+
+  /* ---------- Otvaranje i zatvaranje ---------- */
+  var elKorpa = document.getElementById("korpa");
+  var elZastor = document.getElementById("zastor");
+
+  function otvori(){
+    elKorpa.classList.add("otvorena");
+    elKorpa.setAttribute("aria-hidden","false");
+    elZastor.classList.add("otvoren");
+    document.body.style.overflow = "hidden";
+    document.getElementById("zatvoriKorpu").focus();
+  }
+  function zatvori(){
+    elKorpa.classList.remove("otvorena");
+    elKorpa.setAttribute("aria-hidden","true");
+    elZastor.classList.remove("otvoren");
+    document.body.style.overflow = "";
+    document.getElementById("otvoriKorpu").focus();
+  }
+  document.getElementById("otvoriKorpu").addEventListener("click", otvori);
+  document.getElementById("zatvoriKorpu").addEventListener("click", zatvori);
+  elZastor.addEventListener("click", zatvori);
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && elKorpa.classList.contains("otvorena")) zatvori(); });
+
+  /* ---------- Sastavljanje porudžbine ---------- */
+  function podaci(){
+    return {
+      ime: document.getElementById("kIme").value.trim(),
+      tel: document.getElementById("kTel").value.trim(),
+      datum: document.getElementById("kDatum").value,
+      adresa: document.getElementById("kAdresa").value.trim(),
+      napomena: document.getElementById("kNapomena").value.trim()
+    };
+  }
+
+  function tekstPorudzbine(){
+    var d = podaci();
+    var r = [];
+    r.push("Spisak sa sajta Slavlje sa stilom");
+    r.push("");
+    korpa.forEach(function(s){
+      r.push("- " + s.ime + " x" + s.kol + " = " + dinari(s.cena*s.kol));
+    });
+    r.push("");
+    r.push("Artikli: " + dinari(zbirArtikala()));
+    r.push("Dostava: " + (dostava() === 0 ? "besplatno" : dinari(dostava())));
+    r.push("Ukupno: " + dinari(zbirArtikala() + dostava()));
+    r.push("");
+    r.push("Ime: " + d.ime);
+    r.push("Telefon: " + d.tel);
+    r.push("Datum proslave: " + (d.datum || "nije upisan"));
+    r.push("Adresa dostave: " + (d.adresa || "nije upisana"));
+    r.push("Napomena: " + (d.napomena || "nema"));
+    return r.join("\n");
+  }
+
+  var elGreska = document.getElementById("kGreska");
+
+  function proveri(){
+    var d = podaci();
+    elGreska.style.display = "none";
+    if (!d.ime){ pokaziGresku("Upišite ime da znamo kome se javljamo.", "kIme"); return false; }
+    if (d.tel.replace(/\D/g,"").length < 8){ pokaziGresku("Broj telefona nije potpun. Upišite ga sa pozivnim brojem.", "kTel"); return false; }
+    if (!d.datum){ pokaziGresku("Izaberite datum proslave da proverimo termin.", "kDatum"); return false; }
+    return true;
+  }
+  function pokaziGresku(tekst, polje){
+    elGreska.textContent = tekst;
+    elGreska.style.display = "block";
+    document.getElementById(polje).focus();
+  }
+
+  document.getElementById("posaljiMejl").addEventListener("click", function(){
+    if (!korpa.length || !proveri()) return;
+    var d = podaci();
+    var naslov = "Porudžbina sa sajta — " + d.ime + (d.datum ? " — " + d.datum : "");
+    window.location.href = "mailto:" + PRIMALAC +
+      "?subject=" + encodeURIComponent(naslov) +
+      "&body=" + encodeURIComponent(tekstPorudzbine());
+  });
+
+  document.getElementById("kopiraj").addEventListener("click", function(){
+    var dug = this;
+    var tekst = tekstPorudzbine();
+    function uspeh(){
+      dug.textContent = "Spisak je kopiran";
+      setTimeout(function(){ dug.textContent = "Kopirajte spisak za Viber"; }, 1600);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(tekst).then(uspeh, function(){ rucnoKopiranje(tekst, uspeh); });
+    } else {
+      rucnoKopiranje(tekst, uspeh);
+    }
+  });
+
+  function rucnoKopiranje(tekst, kad){
+    var ta = document.createElement("textarea");
+    ta.value = tekst;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); kad(); } catch(err){ elGreska.textContent = "Kopiranje nije uspelo. Označite tekst ručno ili nas pozovite."; elGreska.style.display = "block"; }
+    document.body.removeChild(ta);
+  }
+
+  osvezi();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+:root {
+  --color-white: #ffffff;
+  --color-ink: #191426; /* primary text, dark surfaces */
+  --color-gray: #6b6579; /* secondary text */
+  --color-border: #e8e5ee; /* borders and dividers */
+  --color-magenta: #e31c79; /* main accent, prices, CTAs */
+  --color-magenta-hover: #c61568;
+  --color-yellow: #ffc700; /* badges and highlights */
+  --color-turquoise: #00a9a5; /* categories, confirmations */
+  --color-turquoise-hover: #008f8b;
+  --color-soft: #f7f5fa; /* light gray surface */
+
+  --font-heading: 'Bricolage Grotesque', 'Manrope', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+
+  --max-width: 1240px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-white);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-turquoise);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+.section {
+  padding: 76px 0;
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 52px 0;
+  }
+}
+
+/* ---------- Shared button primitives ---------- */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  font-size: 15.5px;
+  padding: 13px 24px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-magenta);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background: var(--color-magenta-hover);
+}
+
+.btn-outline {
+  border-color: var(--color-ink);
+  background: var(--color-white);
+  color: var(--color-ink);
+}
+
+.btn-outline:hover {
+  background: var(--color-soft);
+}
+
+.btn-turquoise {
+  background: var(--color-turquoise);
+  color: var(--color-white);
+}
+
+.btn-turquoise:hover {
+  background: var(--color-turquoise-hover);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}

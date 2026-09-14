@@ -1,0 +1,18 @@
+.top-bar {
+  background: var(--color-ink);
+  color: #dcd7e6;
+  font-size: 13.5px;
+}
+
+.top-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 0;
+  flex-wrap: wrap;
+}
+
+.top-bar b {
+  color: var(--color-yellow);
+  font-weight: 700;
+}
