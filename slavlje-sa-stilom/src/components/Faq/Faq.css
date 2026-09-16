@@ -8,6 +8,7 @@
 
 .faq-item {
   border-top: 1.5px solid var(--color-border);
+  overflow: hidden;
 }
 
 .faq-item:last-child {
@@ -34,14 +35,22 @@
   color: var(--color-magenta);
   font-size: 1.4rem;
   line-height: 1;
+  display: inline-block;
+  transition: transform 0.25s ease;
 }
 
-.faq-item[open] summary::after {
-  content: '\2013';
+.faq-item.is-open summary::after {
+  transform: rotate(45deg);
 }
 
-.faq-item p {
+.faq-item-content p {
   margin: 0 0 20px;
   color: var(--color-gray);
   max-width: 70ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item summary::after {
+    transition: none;
+  }
 }

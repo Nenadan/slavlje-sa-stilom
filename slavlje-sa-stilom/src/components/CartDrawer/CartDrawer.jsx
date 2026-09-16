@@ -3,6 +3,7 @@ import { useCart } from '../../context/CartContext';
 import CartItem from '../CartItem/CartItem';
 import { formatPrice } from '../../utils/formatPrice';
 import { buildOrderText, validateOrder } from '../../utils/order';
+import { useAnimatedDetails } from '../../hooks/useAnimatedDetails';
 import './CartDrawer.css';
 
 const ORDER_RECIPIENT = 'zdravo@slavljesastilom.rs';
@@ -15,6 +16,7 @@ function CartDrawer() {
   const [formData, setFormData] = useState(EMPTY_FORM);
   const [error, setError] = useState(null);
   const [copyLabel, setCopyLabel] = useState('Kopirajte spisak za Viber');
+  const { detailsRef, isOpen, handleClick: toggleDetails } = useAnimatedDetails();
 
   const closeButtonRef = useRef(null);
   const nameFieldRef = useRef(null);
@@ -152,79 +154,88 @@ function CartDrawer() {
               <span>{formatPrice(total)}</span>
             </div>
 
-            <div className="form-grid">
-              <div className="form-field">
-                <label htmlFor="checkout-name">Ime i prezime</label>
-                <input
-                  id="checkout-name"
-                  type="text"
-                  autoComplete="name"
-                  ref={nameFieldRef}
-                  value={formData.name}
-                  onChange={(event) => updateField('name', event.target.value)}
-                />
-              </div>
-              <div className="form-field">
-                <label htmlFor="checkout-phone">Telefon</label>
-                <input
-                  id="checkout-phone"
-                  type="tel"
-                  autoComplete="tel"
-                  placeholder="06x xxx xxxx"
-                  ref={phoneFieldRef}
-                  value={formData.phone}
-                  onChange={(event) => updateField('phone', event.target.value)}
-                />
-              </div>
-              <div className="form-field">
-                <label htmlFor="checkout-date">Datum proslave</label>
-                <input
-                  id="checkout-date"
-                  type="date"
-                  ref={dateFieldRef}
-                  value={formData.date}
-                  onChange={(event) => updateField('date', event.target.value)}
-                />
-              </div>
-              <div className="form-field">
-                <label htmlFor="checkout-address">Adresa dostave</label>
-                <input
-                  id="checkout-address"
-                  type="text"
-                  autoComplete="street-address"
-                  value={formData.address}
-                  onChange={(event) => updateField('address', event.target.value)}
-                />
-              </div>
-              <div className="form-field form-field-full">
-                <label htmlFor="checkout-note">Napomena: boje, vreme dostave, ime na balonima</label>
-                <textarea
-                  id="checkout-note"
-                  value={formData.note}
-                  onChange={(event) => updateField('note', event.target.value)}
-                />
-              </div>
-            </div>
-
-            {error && (
-              <p className="form-error" role="alert">
-                {error}
-              </p>
-            )}
-
-            <button className="btn btn-primary" type="button" onClick={handleSendEmail}>
-              Pošaljite spisak mejlom
-            </button>
-            <button
-              className="btn btn-outline secondary-button"
-              type="button"
-              onClick={handleCopy}
+            <details
+              className={`checkout-details${isOpen ? ' is-open' : ''}`}
+              ref={detailsRef}
             >
-              {copyLabel}
-            </button>
-            <p className="helper-text">
-              Slanjem se otvara vaš mejl program sa popunjenom porudžbinom. Ništa se ne naplaćuje.
-            </p>
+              <summary onClick={toggleDetails}>Unesite podatke za porudžbinu</summary>
+
+              <div className="checkout-details-content">
+                <div className="form-grid">
+                  <div className="form-field">
+                    <label htmlFor="checkout-name">Ime i prezime</label>
+                    <input
+                      id="checkout-name"
+                      type="text"
+                      autoComplete="name"
+                      ref={nameFieldRef}
+                      value={formData.name}
+                      onChange={(event) => updateField('name', event.target.value)}
+                    />
+                  </div>
+                  <div className="form-field">
+                    <label htmlFor="checkout-phone">Telefon</label>
+                    <input
+                      id="checkout-phone"
+                      type="tel"
+                      autoComplete="tel"
+                      placeholder="06x xxx xxxx"
+                      ref={phoneFieldRef}
+                      value={formData.phone}
+                      onChange={(event) => updateField('phone', event.target.value)}
+                    />
+                  </div>
+                  <div className="form-field">
+                    <label htmlFor="checkout-date">Datum proslave</label>
+                    <input
+                      id="checkout-date"
+                      type="date"
+                      ref={dateFieldRef}
+                      value={formData.date}
+                      onChange={(event) => updateField('date', event.target.value)}
+                    />
+                  </div>
+                  <div className="form-field">
+                    <label htmlFor="checkout-address">Adresa dostave</label>
+                    <input
+                      id="checkout-address"
+                      type="text"
+                      autoComplete="street-address"
+                      value={formData.address}
+                      onChange={(event) => updateField('address', event.target.value)}
+                    />
+                  </div>
+                  <div className="form-field form-field-full">
+                    <label htmlFor="checkout-note">Napomena: boje, vreme dostave, ime na balonima</label>
+                    <textarea
+                      id="checkout-note"
+                      value={formData.note}
+                      onChange={(event) => updateField('note', event.target.value)}
+                    />
+                  </div>
+                </div>
+
+                {error && (
+                  <p className="form-error" role="alert">
+                    {error}
+                  </p>
+                )}
+
+                <button className="btn btn-primary" type="button" onClick={handleSendEmail}>
+                  Pošaljite spisak mejlom
+                </button>
+                <button
+                  className="btn btn-outline secondary-button"
+                  type="button"
+                  onClick={handleCopy}
+                >
+                  {copyLabel}
+                </button>
+                <p className="helper-text">
+                  Slanjem se otvara vaš mejl program sa popunjenom porudžbinom. Ništa se ne naplaćuje.
+                </p>
+              </div>
+            </details>
           </div>
         )}
       </aside>

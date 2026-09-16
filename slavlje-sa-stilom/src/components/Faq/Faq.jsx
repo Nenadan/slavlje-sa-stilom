@@ -1,3 +1,4 @@
+import { useAnimatedDetails } from '../../hooks/useAnimatedDetails';
 import './Faq.css';
 
 const FAQ_ITEMS = [
@@ -28,6 +29,18 @@ const FAQ_ITEMS = [
   },
 ];
 
+function FaqItem({ item }) {
+  const { detailsRef, isOpen, handleClick } = useAnimatedDetails();
+  return (
+    <details className={`faq-item${isOpen ? ' is-open' : ''}`} ref={detailsRef}>
+      <summary onClick={handleClick}>{item.question}</summary>
+      <div className="faq-item-content">
+        <p>{item.answer}</p>
+      </div>
+    </details>
+  );
+}
+
 function Faq() {
   return (
     <section className="section faq" id="faq">
@@ -36,10 +49,7 @@ function Faq() {
           <h2>Česta pitanja</h2>
         </div>
         {FAQ_ITEMS.map((item) => (
-          <details className="faq-item" key={item.question}>
-            <summary>{item.question}</summary>
-            <p>{item.answer}</p>
-          </details>
+          <FaqItem key={item.question} item={item} />
         ))}
       </div>
     </section>
