@@ -45,13 +45,26 @@
   border-bottom-color: var(--color-magenta);
 }
 
+.menu-button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  color: var(--color-ink);
+  cursor: pointer;
+  padding: 0;
+}
+
 @media (max-width: 940px) {
   .nav {
     display: none;
   }
 
-  .cart-button {
-    margin-left: auto !important;
+  .menu-button {
+    display: inline-flex;
   }
 }
 

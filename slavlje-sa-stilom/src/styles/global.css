@@ -87,6 +87,16 @@ button {
 }
 
 /* ---------- Shared button primitives ---------- */
+.close-button {
+  background: none;
+  border: none;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-gray);
+  padding: 4px 8px;
+}
+
 .btn {
   display: inline-block;
   text-decoration: none;
