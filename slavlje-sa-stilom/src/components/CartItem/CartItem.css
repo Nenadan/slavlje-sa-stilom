@@ -1,7 +1,7 @@
 .cart-item {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 8px 14px;
+  grid-template-columns: 56px 1fr;
+  gap: 12px;
   padding: 16px;
   margin-bottom: 12px;
   background: var(--color-white);
@@ -13,7 +13,36 @@
   margin-bottom: 0;
 }
 
-.cart-item h4 {
+.cart-item-thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: rgba(0, 169, 165, 0.12);
+  overflow: hidden;
+}
+
+.cart-item-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cart-item-main {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.cart-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.cart-item-top h4 {
   margin: 0;
   font-size: 15.5px;
   font-weight: 700;
@@ -37,6 +66,8 @@
   border: 1.5px solid var(--color-border);
   border-radius: 8px;
   overflow: hidden;
+  width: fit-content;
+  margin-top: 2px;
 }
 
 .quantity-control button {
@@ -47,6 +78,9 @@
   cursor: pointer;
   font-size: 17px;
   color: var(--color-ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .quantity-control button:hover {
@@ -58,25 +92,4 @@
   text-align: center;
   font-weight: 700;
   font-size: 14.5px;
-}
-
-.remove-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border: none;
-  border-radius: 8px;
-  background: none;
-  color: var(--color-gray);
-  cursor: pointer;
-  padding: 0;
-  justify-self: end;
-  transition: color 0.15s ease, background-color 0.15s ease;
-}
-
-.remove-button:hover {
-  color: var(--color-magenta-hover);
-  background: var(--color-soft);
 }

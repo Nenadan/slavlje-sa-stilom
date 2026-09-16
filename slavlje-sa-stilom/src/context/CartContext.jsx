@@ -20,7 +20,14 @@ export function CartProvider({ children }) {
       }
       return [
         ...current,
-        { id: product.id, name: product.name, price: product.price, unit: product.unit, qty: 1 },
+        {
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          unit: product.unit,
+          image: product.images?.[0],
+          qty: 1,
+        },
       ];
     });
   }
