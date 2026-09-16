@@ -2,8 +2,15 @@
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 8px 14px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--color-border);
+  padding: 16px;
+  margin-bottom: 12px;
+  background: var(--color-white);
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(25, 20, 38, 0.08);
+}
+
+.cart-item:last-child {
+  margin-bottom: 0;
 }
 
 .cart-item h4 {
@@ -54,12 +61,22 @@
 }
 
 .remove-button {
-  background: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
   border: none;
+  border-radius: 8px;
+  background: none;
   color: var(--color-gray);
-  font-size: 13px;
   cursor: pointer;
   padding: 0;
-  text-decoration: underline;
-  justify-self: start;
+  justify-self: end;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.remove-button:hover {
+  color: var(--color-magenta-hover);
+  background: var(--color-soft);
 }

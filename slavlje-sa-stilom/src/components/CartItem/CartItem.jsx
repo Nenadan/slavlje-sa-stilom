@@ -28,8 +28,22 @@ function CartItem({ item, onChangeQuantity, onRemove }) {
           +
         </button>
       </div>
-      <button type="button" className="remove-button" onClick={() => onRemove(item.id)}>
-        Uklonite
+      <button
+        type="button"
+        className="remove-button"
+        aria-label={`Uklonite ${item.name} iz korpe`}
+        onClick={() => onRemove(item.id)}
+      >
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path
+            d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m-9 0 1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13M10 11v6M14 11v6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </button>
     </div>
   );
